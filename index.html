@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Behind the Screen — The Illusion of Connection</title>
+  <meta name="description" content="A community project exploring how online interaction can deepen loneliness. Stories, art, resources and ways to connect more authentically." />
+  <!-- Google Font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa6b2;
+      --accent:#7dd3fc;
+      --accent-2:#60a5fa;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --max:1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,0.06), transparent 8%),
+        radial-gradient(800px 400px at 90% 90%, rgba(125,211,252,0.04), transparent 8%),
+        var(--bg);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .wrap{width:100%;max-width:var(--max);}
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    .logo{
+      width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#04293a;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 -6px 18px rgba(255,255,255,0.04);
+      flex-shrink:0;
+    }
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:24px;
+      align-items:start;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .hero{
+      padding:28px;
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+    }
+    .hero .art{
+      min-width:140px;height:140px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);text-align:center;padding:12px;
+      box-shadow: inset 0 -8px 20px rgba(0,0,0,0.4);
+    }
+    .hero h2{margin:0 0 6px 0;font-size:18px}
+    .hero p{margin:0;color:var(--muted);line-height:1.4}
+
+    /* Stories list */
+    .stories{display:grid;gap:12px;margin-top:10px}
+    .story{
+      display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:10px;background:var(--glass);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .avatar{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#04293a}
+    .story .meta{font-size:13px;color:var(--muted)}
+    .story .text{margin-top:6px;color:#dbeafe}
+
+    /* Right column */
+    aside .section{margin-bottom:16px}
+    h3{margin:0 0 10px 0;font-size:15px}
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#04293a;text-decoration:none;font-weight:600;border:none;cursor:pointer;
+    }
+
+    form label{display:block;margin-bottom:8px;font-size:13px;color:var(--muted)}
+    input[type="text"], textarea, select{
+      width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);
+      background:transparent;color:inherit;font-size:14px;
+    }
+    textarea{min-height:100px;resize:vertical}
+    .small{font-size:12px;color:var(--muted)}
+
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      main{grid-template-columns:1fr}
+      aside{order:2}
+      header{align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <div class="logo" aria-hidden="true">BtS</div>
+      <div>
+        <h1>Behind the Screen</h1>
+        <p class="lead">The Illusion of Connection — Stories & resources for deeper, safer online interactions.</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- LEFT / PRIMARY -->
+      <section class="card" aria-labelledby="what-heading">
+        <div class="hero" id="what-heading">
+          <div class="art" id="hero-art">ARTWORK PLACEHOLDER<br><small class="small">Ask your artist to replace this with an illustration: person + phone vs. in-person connection</small></div>
+          <div>
+            <h2>When being “connected” still feels lonely</h2>
+            <p class="small">Online chats can be comforting — but sometimes they feel shallow, scripted, or emotionally distant. This project collects stories, art, and practical tips to help people find more meaningful human connection both online and off.</p>
+            <p class="small" style="margin-top:8px"><strong>Trigger warning:</strong> this site contains personal stories about loneliness and mental health. If you're in crisis, please contact local emergency services or the suicide/crisis hotline in your country.</p>
+          </div>
+        </div>
+
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.02);margin:12px 0 18px">
+
+        <h3>Shared Stories</h3>
+        <div id="stories" class="stories" aria-live="polite">
+          <!-- stories inserted by JS -->
+        </div>
+
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.02);margin:18px 0">
+        <h3>What we learned</h3>
+        <p class="small">Small actions can change how connected someone feels: active listening, asking open questions, checking in offline, and creating spaces where people feel safe to share. This project focuses on awareness, visual expression, and community engagement.</p>
+      </section>
+
+      <!-- RIGHT / SIDEBAR -->
+      <aside>
+        <div class="card section" aria-labelledby="contribute-heading">
+          <h3 id="contribute-heading">Share your story</h3>
+          <p class="small">Add a short anonymous story about a time you felt lonely online. No personal names. We display entries here after submission.</p>
+          <form id="storyForm" onsubmit="return submitStory(event)">
+            <label for="name">Display name (optional)</label>
+            <input id="name" name="name" type="text" placeholder="e.g. Someone from class" />
+
+            <label for="text">Your story (max 400 chars)</label>
+            <textarea id="text" name="text" maxlength="400" placeholder="I once..."></textarea>
+
+            <label for="theme">Theme</label>
+            <select id="theme" name="theme">
+              <option value="lonely-online">Lonely online</option>
+              <option value="shallow-chat">Shallow chat</option>
+              <option value="unexpected-support">Unexpected support</option>
+              <option value="advice">Advice</option>
+            </select>
+
+            <div style="margin-top:10px;display:flex;gap:10px;align-items:center">
+              <button class="btn" type="submit">Share</button>
+              <button type="button" class="small" onclick="clearStories()">Clear sample</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card section" aria-labelledby="resources-heading">
+          <h3 id="resources-heading">Resources & tips</h3>
+          <ul style="padding-left:18px;margin:0;color:var(--muted);line-height:1.6">
+            <li><strong>Active listening:</strong> ask one follow-up question before giving advice.</li>
+            <li><strong>Check-ins:</strong> be specific: “How are you today, really?”</li>
+            <li><strong>Offline invitations:</strong> Turn online chats into voice notes or meet-ups where possible.</li>
+            <li><strong>Boundaries:</strong> it's okay to step away to protect your mental health.</li>
+            <li><strong>Safe spaces:</strong> use trigger warnings and opt-in story sharing.</li>
+          </ul>
+        </div>
+
+        <div class="card section" aria-labelledby="team-heading">
+          <h3 id="team-heading">How your group uses this</h3>
+          <p class="small"><strong>Artist:</strong> replaces the hero art and provides 3 visuals for the gallery (upload to /assets/).<br>
+          <strong>Research/Engagement:</strong> collect 10 real (anonymous) quotes, curate resources & links, add crisis hotlines for your country.<br>
+          <strong>Developer (you):</strong> customize copy, deploy to GitHub Pages, and wire optional form backend if needed.</p>
+        </div>
+
+        <div class="card section" aria-labelledby="deploy-heading">
+          <h3 id="deploy-heading">Deploy / share</h3>
+          <p class="small">To publish: create a GitHub repo, push this `index.html`, then enable GitHub Pages (main branch). Or drop the file into Netlify / Vercel for instant hosting. For in-school use, use the classroom projector or a local USB copy.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="small">Project Title: <strong>Behind the Screen</strong> — Created by your community team • <span id="today"></span></div>
+    </footer>
+  </div>
+
+  <script>
+    // Basic client-only story storage (no backend). Good for demo and class use.
+    const SAMPLE = [
+      {name: "Anonymous", text: "I talked to someone every night but still felt unseen — messages felt like filling silence, not sharing life.", theme: "lonely-online"},
+      {name: "L", text: "We had the same chat script. It felt more like scrolling than connecting.", theme: "shallow-chat"},
+      {name: "M", text: "A classmate sent a voice note one day and it changed everything — hearing them mattered.", theme: "unexpected-support"}
+    ];
+
+    const STORAGE_KEY = 'bts_stories_v1';
+
+    function loadStories() {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      let stories = stored ? JSON.parse(stored) : SAMPLE.slice();
+      renderStories(stories);
+    }
+
+    function renderStories(stories){
+      const el = document.getElementById('stories');
+      el.innerHTML = '';
+      if(!stories.length){
+        el.innerHTML = '<div class="small">No stories yet. Be the first to share.</div>';
+        return;
+      }
+      stories.slice().reverse().forEach(s => {
+        const div = document.createElement('div');
+        div.className = 'story';
+        div.innerHTML = `
+          <div class="avatar" aria-hidden="true">${(s.name||'A').charAt(0).toUpperCase()}</div>
+          <div style="flex:1">
+            <div class="meta"><strong>${escapeHtml(s.name || 'Anonymous')}</strong> · <span class="small">${escapeHtml(s.theme)}</span></div>
+            <div class="text">${escapeHtml(s.text)}</div>
+          </div>
+        `;
+        el.appendChild(div);
+      });
+    }
+
+    function submitStory(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const text = document.getElementById('text').value.trim();
+      const theme = document.getElementById('theme').value;
+      if(!text) { alert('Please write a short story or thought.'); return false; }
+      if(text.length > 400) { alert('Please keep it under 400 characters.'); return false; }
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const arr = stored ? JSON.parse(stored) : SAMPLE.slice();
+      arr.push({name, text, theme});
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+      renderStories(arr);
+      document.getElementById('storyForm').reset();
+      return false;
+    }
+
+    function clearStories(){
+      if(confirm('Remove sample stories and local entries? This only clears data in your browser.')) {
+        localStorage.removeItem(STORAGE_KEY);
+        renderStories([]);
+      }
+    }
+
+    function escapeHtml(str){
+      if(!str) return '';
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // Page footer date
+    document.getElementById('today').textContent = new Date().toLocaleDateString();
+
+    // Initialize
+    loadStories();
+  </script>
+</body>
+</html>
